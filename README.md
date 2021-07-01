@@ -12,6 +12,7 @@ Simple contact app made with Express and mongodb. Learned from [Web Programming 
   ```
   DB_URI:**your_mongodb_url**
   BASE_URL:http://localhost:3000
+  SESSION_SECRET:**your_secret**
   ```
 - install nodemon (if not installed):
   `npm install -g nodemon`

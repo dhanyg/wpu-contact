@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WPU Contact</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+<body>
+    <div class="bg-gray-100 min-h-screen pb-10">
+        <!-- header -->
+        <header>
+            <nav class="flex justify-between items-center bg-gray-800 py-5 px-5 sm:px-10 md:px-20">
+                <div class="text-gray-100 font-bold text-2xl">
+                    <a href="/">WPU Contact</a>
+                </div>
+                <div>
+                    <p class="text-gray-100">Howdy, <span class="font-medium">Galih!</span></p>
+                </div>
+            </nav>
+        </header>
+
+        <!-- content -->
+        <%- body %>
+
+    </div>
+
+    <!-- footer -->
+    <footer class="py-3 px-5 sm:px-10 md:px-20 bg-gray-200">
+        <div class="text-gray-600 text-sm block flex items-center space-x-1">
+            <span>Made with</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-400" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd" />
+            </svg>
+        </div>
+    </footer>
+
+</body>
+
+</html>

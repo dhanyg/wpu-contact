@@ -33,7 +33,7 @@ app.use(flash());
 app.use(methodOverride('_method'))
 
 /** routes */
-app.use(contactRoutes);
+app.use('/contact', contactRoutes);
 app.get('/', (req, res) => {
     res.redirect('/contact');
 });

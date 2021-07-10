@@ -30,7 +30,7 @@ module.exports.save = async (req, res, next) => {
 
 module.exports.edit = async (req, res) => {
     try {
-        const contact = await Contact.findOne({ fullName: req.params.name });
+        const contact = await Contact.findOne({ 'fullName': req.params.name });
         res.render('contact/edit', { contact, old: null });
     } catch (error) {
         res.json(error);
@@ -39,7 +39,7 @@ module.exports.edit = async (req, res) => {
 
 module.exports.update = async (req, res) => {
     try {
-        const contact = await Contact.findOne({ fullName: req.body.fullName })
+        const contact = await Contact.findOne({ 'fullName': req.body.oldName }).exec();
         const errors = validationResult(req);
         const newErrors = errors.mapped(error => newErrors[error.param].push(error));
 
@@ -53,7 +53,8 @@ module.exports.update = async (req, res) => {
                 {
                     fullName: req.body.fullName,
                     phone: req.body.phone,
-                    email: req.body.email
+                    email: req.body.email,
+                    contactType: req.body.contactType
                 }
             );
             req.flash('message', 'Contact has been updated!');
@@ -88,7 +89,7 @@ module.exports.validate = (method) => {
         case 'save':
             return [
                 body('fullName').custom(async (value) => {
-                    const isContactExist = await Contact.findOne({ fullName: value });
+                    const isContactExist = await Contact.findOne({ fullName: value }).exec();
                     if (isContactExist) {
                         throw new Error('Contact is already exist!');
                     }
@@ -101,7 +102,7 @@ module.exports.validate = (method) => {
         case 'update':
             return [
                 body('fullName').custom(async (value, { req }) => {
-                    const contact = await Contact.findOne({ fullName: value });
+                    const contact = await Contact.findOne({ fullName: value }).exec();
                     if (value !== req.body.oldName && contact) {
                         throw new Error('Contact is already exist!');
                     }

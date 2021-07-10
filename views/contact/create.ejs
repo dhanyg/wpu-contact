@@ -7,10 +7,10 @@
                 <input
                     class="block w-full rounded ring-2 ring-gray-200 px-2 py-1.5 text-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                     type="text" name="fullName" id="fullName" required value="<%= old?.fullName || '' %>">
-                <% if (typeof errors !=='undefined' && errors.hasOwnProperty('fullName')) { %>
+                <% if (typeof errors !=='undefined' ) { %>
                     <div class="text-red-400 mt-1">
                         <small>
-                            <%= errors.fullName.msg %>
+                            <%= errors.fullName?.msg %>
                         </small>
                     </div>
                     <% } %>
@@ -20,10 +20,10 @@
                 <input
                     class="block w-full rounded ring-2 ring-gray-200 px-2 py-1.5 text-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                     type="text" name="phone" id="phone" value="<%= old?.phone || '' %>">
-                <% if (typeof errors !=='undefined' && errors.hasOwnProperty('phone')) { %>
+                <% if (typeof errors !=='undefined' ) { %>
                     <div class="text-red-400 mt-1">
                         <small>
-                            <%= errors.phone.msg %>
+                            <%= errors.phone?.msg %>
                         </small>
                     </div>
                     <% } %>
@@ -33,10 +33,10 @@
                 <input
                     class="block w-full rounded ring-2 ring-gray-200 px-2 py-1.5 text-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                     type="email" name="email" id="email" value="<%= old?.email || '' %>">
-                <% if (typeof errors !=='undefined' && errors.hasOwnProperty('email')) { %>
+                <% if (typeof errors !=='undefined' ) { %>
                     <div class="text-red-400 mt-1">
                         <small>
-                            <%= errors.email.msg %>
+                            <%= errors.email?.msg %>
                         </small>
                     </div>
                     <% } %>
@@ -61,10 +61,10 @@
                             clip-rule="evenodd" />
                     </svg>
                 </div>
-                <% if (typeof errors !=='undefined' && errors.hasOwnProperty('contactType')) { %>
+                <% if (typeof errors !=='undefined' ) { %>
                     <div class="text-red-400 mt-1">
                         <small>
-                            <%= errors.contactType.msg %>
+                            <%= errors.contactType?.msg %>
                         </small>
                     </div>
                     <% } %>
